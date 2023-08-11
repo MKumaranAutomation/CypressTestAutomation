@@ -19,7 +19,11 @@ describe('Orange HRM - Login Tests', () => {
   })
 
 
-  it('Login to Orange HRM Demo Site', () => {
+  it('Login with Valid Credentails', () => {
     login.loginWithValidCredentials(username, password);
+  })
+
+  it('Login with Invalid Credentails',()=>{
+    login.loginWithInvalidCredentials(username,password);
   })
 })
