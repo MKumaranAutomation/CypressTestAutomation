@@ -16,6 +16,9 @@ class loginPage{
         return cy.get('button[class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]')
     }
 
+    isLoginPageDisplayed(){
+        this.usernameTxtField().should('be.visible'); 
+    }
     // LoginPage Functions
     IsInvalidCredentialsMessageDisplayed(){
         this.invalidCredentialMessage().should('be.visible')
