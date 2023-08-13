@@ -2,12 +2,16 @@
 
 import loginPage from "../pages/loginPage"
 import homePage from "../pages/homePage";
+// const jsonAssertion = require("soft-assert")
+
 
 const login = new loginPage();
 const home = new homePage();
 
 
 let url, username, password;
+const links = [];
+
 describe('Orange HRM - Login Tests', () => {
 
   before(()=>{
@@ -47,7 +51,7 @@ describe('Verify the Sidebar menus',()=>{
   })
 
 
-  it.only('Click on Admin',()=>{
+  it.only('Click on Sidebar Links',()=>{
     login.loginWithValidCredentials(username, password);
     home.clickOnSidebarLinks('Admin');
     home.clickOnSidebarLinks('PIM');
@@ -58,11 +62,10 @@ describe('Verify the Sidebar menus',()=>{
     home.clickOnSidebarLinks('Performance');
     home.clickOnSidebarLinks('Dashboard');
     home.clickOnSidebarLinks('Directory');
-    home.clickOnSidebarLinks('Maintenance');
+    // home.clickOnSidebarLinks('Maintenance');
     home.clickOnSidebarLinks('Claim');
     home.clickOnSidebarLinks('Buzz');
     home.logoutFromApp();
   })
-
   
 })

@@ -1,4 +1,6 @@
 import loginPage from "./loginPage";
+// const jsonAssertion = require("soft-assert");
+
 
 const login = new loginPage();
 
@@ -25,7 +27,7 @@ class homePage{
         this.sidebarLinks().each(($el,index,$list)=>{
             if($el.text() == link){
                 cy.wrap($el).click();
-                this.sidebarLinksLandingPage().should('have.text',`${$el.text()}`)
+                 this.sidebarLinksLandingPage().should('have.text',`${$el.text()}`);
             }
         })
     }
