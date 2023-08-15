@@ -11,7 +11,7 @@ class homePage{
     }
 
     sidebarLinksLandingPage(){
-        return cy.get('.oxd-topbar-header-breadcrumb-module');
+        return cy.get('.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module');
     }
 
     loggedInUser(){
@@ -26,8 +26,10 @@ class homePage{
     clickOnSidebarLinks(link){
         this.sidebarLinks().each(($el,index,$list)=>{
             if($el.text() == link){
-                cy.wrap($el).click();
-                 this.sidebarLinksLandingPage().should('have.text',`${$el.text()}`);
+                cy.wrap($el).click()
+                this.sidebarLinksLandingPage().invoke('text').then(actualValue=>{
+                    expect(actualValue).eq($el.text())
+                })
             }
         })
     }
