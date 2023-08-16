@@ -1,14 +1,14 @@
 /// <reference types="Cypress" />
 
 import loginPage from "../pages/loginPage"
-import homePage from "../pages/homePage";
+import homePage from "../pages/homePage"
 // const jsonAssertion = require("soft-assert")
 
 
 const login = new loginPage();
 const home = new homePage();
 
-
+//variable declaration
 let url, username, password;
 const links = [];
 
