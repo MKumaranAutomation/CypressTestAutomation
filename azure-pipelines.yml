@@ -18,5 +18,8 @@ steps:
 - script: |
     npm install
     npm run build
-    npm run test
   displayName: 'npm install and build'
+
+- script: |
+    npx cypress run
+    displayName: 'Run Cypress Tests'
